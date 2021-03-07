@@ -1,5 +1,4 @@
 *.o
-Debug/*
+*.d
 *.gch
 *.out
-*.mk
