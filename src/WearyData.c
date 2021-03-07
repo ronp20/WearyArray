@@ -4,9 +4,9 @@
  *  Created on: 4 Mar 2021
  *      Author: ron_po
  */
-#include "WearyStruct.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "WearyData.h"
 
 
 WearyData* WearyDataCreate(uint64_t p_value)

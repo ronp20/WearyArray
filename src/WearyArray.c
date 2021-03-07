@@ -8,9 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 #define INIT_CAPACITY 16
-#define FREE(ptr) ({free(ptr); ptr = NULL;})
 
 static RETURN_STATUS WearyArrayRealloc(WearyArray* p_wearyArray);
 

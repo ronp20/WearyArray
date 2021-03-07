@@ -8,6 +8,8 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+#define FREE(ptr) ({free(ptr); ptr = NULL;})
+
 typedef enum
 {
 	OK,
