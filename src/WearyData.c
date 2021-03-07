@@ -15,8 +15,6 @@ WearyData* WearyDataCreate(uint64_t p_value)
 	{
 		wearyData->isVisited = FALSE;
 		wearyData->value = p_value;
-//		wearyData->left = NULL;
-//		wearyData->right = NULL;
 	}
 
 	return wearyData;
@@ -26,54 +24,16 @@ void WearyDataCDestroy(WearyData* p_wearyData)
 {
 	if(p_wearyData != NULL)
 	{
-		free(p_wearyData);
+		FREE(p_wearyData);
 	}
 }
-//
-//void WearyDataCAddLeftNode(WearyData* p_current, WearyData* p_left)
-//{
-//	if(p_current != NULL)
-//	{
-//		p_current->left = p_left;
-//	}
-//}
-//
-//void WearyDataCAddRightNode(WearyData* p_current, WearyData* p_right)
-//{
-//	if(p_current != NULL)
-//	{
-//		p_current->right = p_right;
-//	}
-//}
-//
-//WearyData* WearyDataCGetLeftNode(const WearyData* p_wearyData)
-//{
-//	WearyData* localWearyData = NULL;
-//	if(p_wearyData != NULL)
-//	{
-//		localWearyData = p_wearyData->left;
-//	}
-//
-//	return localWearyData;
-//}
-//
-//WearyData* WearyDataCGetRightNode(const WearyData* p_wearyData)
-//{
-//	WearyData* localWearyData = NULL;
-//	if(p_wearyData != NULL)
-//	{
-//		localWearyData = p_wearyData->right;
-//	}
-//
-//	return localWearyData;
-//}
 
-RETURN_STATUS WearyDataIsVisited(const WearyData* p_wearyData)
+BOOLEAN WearyDataIsVisited(const WearyData* p_wearyData)
 {
-	RETURN_STATUS retValue = ERROR;
+	BOOLEAN retValue = FALSE;
 	if(p_wearyData != NULL && p_wearyData->isVisited == TRUE)
 	{
-		retValue = OK;
+		retValue = TRUE;
 	}
 
 	return retValue;

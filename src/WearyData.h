@@ -14,23 +14,13 @@ typedef struct WearyData
 {
 	BOOLEAN isVisited;
 	uint64_t value;
-//	struct WearyData* right;
-//	struct WearyData* left;
 }WearyData;
 
 WearyData* WearyDataCreate(uint64_t p_value);
 
 void WearyDataCDestroy(WearyData* p_wearyData);
 
-//void WearyDataCAddLeftNode(WearyData* p_current, WearyData* p_left);
-
-//void WearyDataCAddRightNode(WearyData* p_current, WearyData* p_right);
-
-//WearyData* WearyDataCGetLeftNode(const WearyData* p_wearyData);
-
-//WearyData* WearyDataCGetRightNode(const WearyData* p_wearyData);
-
-RETURN_STATUS WearyDataIsVisited(const WearyData* p_wearyData);
+BOOLEAN WearyDataIsVisited(const WearyData* p_wearyData);
 
 void WearyDataSetVisited(WearyData* p_wearyData);
 

@@ -23,10 +23,10 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: WearyArrayTraveler
+all: WearyArrayTraveler.out
 
 # Tool invocations
-WearyArrayTraveler: $(OBJS) $(USER_OBJS)
+WearyArrayTraveler.out: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross GCC Linker'
 	gcc  -o "WearyArrayTraveler.out" $(OBJS) $(USER_OBJS) $(LIBS)
@@ -35,7 +35,7 @@ WearyArrayTraveler: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) WearyArrayTraveler
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) WearyArrayTraveler.out
 	-@echo ' '
 
 .PHONY: all clean dependents

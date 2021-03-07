@@ -19,9 +19,9 @@ typedef struct WearyArrayTraveler
 
 WearyArrayTraveler* WearyArrayTravelerCreate(const char* p_path);
 
-BOOLEAN WearyArrayTraveleIsTraveler(WearyArrayTraveler* p_wearyArrayTraveler);
-
 void WearyArrayTravelerDestroy(WearyArrayTraveler* p_wearyArrayTraveler);
+
+BOOLEAN WearyArrayTraveleIsTraveler(WearyArrayTraveler* p_wearyArrayTraveler);
 
 void WearyArrayTravelerPrint(const WearyArrayTraveler* p_wearyArrayTraveler);
 

@@ -47,13 +47,13 @@ void WearyArrayDestroy(WearyArray* p_wearyArray)
 		}
 
 		FREE(p_wearyArray->wearyArr);
+		FREE(p_wearyArray);
 	}
 	else
 	{
 		printf("WearyArrayDestroy NULL input\n");
 	}
 
-	FREE(p_wearyArray);
 }
 
 static RETURN_STATUS WearyArrayRealloc(WearyArray* p_wearyArray)
@@ -103,7 +103,6 @@ RETURN_STATUS WearyArrayPush(WearyArray* p_wearyArray, uint64_t p_value)
 		printf("WearyArrayPush NULL input\n");
 		retValue = ERROR;
 	}
-
 	return retValue;
 }
 
@@ -111,7 +110,7 @@ static BOOLEAN IsTravelerRec(WearyData** p_wearyData, uint64_t p_currentIndex, u
 {
 	uint64_t dataValue;
 	if(p_currentIndex > p_arraSize ||
-			WearyDataIsVisited(p_wearyData[p_currentIndex]) == OK)
+			WearyDataIsVisited(p_wearyData[p_currentIndex]))
 	{
 		return FALSE;
 	}
@@ -128,7 +127,7 @@ static BOOLEAN IsTravelerRec(WearyData** p_wearyData, uint64_t p_currentIndex, u
 		return FALSE;
 	}
 
-	if(IsTravelerRec(p_wearyData, p_currentIndex + dataValue, p_arraSize) == TRUE)
+	if(IsTravelerRec(p_wearyData, p_currentIndex + dataValue, p_arraSize))
 	{
 		return TRUE;
 	}
