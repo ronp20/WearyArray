@@ -8,7 +8,6 @@
 #ifndef WEARYARRAYTRAVELER_H_
 #define WEARYARRAYTRAVELER_H_
 #include "Defines.h"
-//#include "WearyArray.h"
 #include <stdint.h>
 
 struct WearyArray;

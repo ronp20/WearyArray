@@ -25,10 +25,13 @@ WearyArray* WearyArrayCreate()
 		}
 		else
 		{
-//			free(localWearyArray);
-//			localWearyArray = NULL;
+			printf("WearyArrayCreate failed to allocate memory to wearyArr!\n");
 			FREE(localWearyArray);
 		}
+	}
+	else
+	{
+		printf("WearyArrayCreate failed to allocate memory to localWearyArray!\n");
 	}
 
 	return localWearyArray;
@@ -45,6 +48,10 @@ void WearyArrayDestroy(WearyArray* p_wearyArray)
 
 		FREE(p_wearyArray->wearyArr);
 	}
+	else
+	{
+		printf("WearyArrayDestroy NULL input\n");
+	}
 
 	FREE(p_wearyArray);
 }
@@ -58,6 +65,10 @@ static RETURN_STATUS WearyArrayRealloc(WearyArray* p_wearyArray)
 		retValue = OK;
 		p_wearyArray->capacity *= 2;
 		p_wearyArray->wearyArr = localWearyData;
+	}
+	else
+	{
+		printf("WearyArrayRealloc Failed!\n");
 	}
 
 	return retValue;
@@ -89,6 +100,7 @@ RETURN_STATUS WearyArrayPush(WearyArray* p_wearyArray, uint64_t p_value)
 	}
 	else
 	{
+		printf("WearyArrayPush NULL input\n");
 		retValue = ERROR;
 	}
 
@@ -116,7 +128,6 @@ static BOOLEAN IsTravelerRec(WearyData** p_wearyData, uint64_t p_currentIndex, u
 		return FALSE;
 	}
 
-
 	if(IsTravelerRec(p_wearyData, p_currentIndex + dataValue, p_arraSize) == TRUE)
 	{
 		return TRUE;
@@ -125,7 +136,6 @@ static BOOLEAN IsTravelerRec(WearyData** p_wearyData, uint64_t p_currentIndex, u
 	{
 		return IsTravelerRec(p_wearyData, p_currentIndex - dataValue, p_arraSize);
 	}
-
 }
 
 BOOLEAN WearyArrayIsTraveler(WearyArray* p_wearyArray)

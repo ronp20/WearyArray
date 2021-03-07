@@ -10,7 +10,6 @@
 #include "Defines.h"
 #include <stdint.h>
 
-
 typedef struct WearyData
 {
 	BOOLEAN isVisited;

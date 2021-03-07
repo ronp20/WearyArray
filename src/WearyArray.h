@@ -7,7 +7,6 @@
 
 #ifndef WEARYARRAY_H_
 #define WEARYARRAY_H_
-#include <stddef.h> //size
 #include "WearyData.h"
 
 typedef struct WearyArray

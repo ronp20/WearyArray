@@ -4,10 +4,8 @@
  *  Created on: 4 Mar 2021
  *      Author: ron_po
  */
-#include <stdlib.h>
-#include <stdio.h>
 #include "WearyData.h"
-
+#include <stdio.h>
 
 WearyData* WearyDataCreate(uint64_t p_value)
 {
