@@ -133,6 +133,10 @@ static BOOLEAN IsTravelerRec(WearyData** p_wearyData, uint64_t p_currentIndex, u
 	}
 	else
 	{
+		if(dataValue > p_currentIndex)
+		{
+			return FALSE;
+		}
 		return IsTravelerRec(p_wearyData, p_currentIndex - dataValue, p_arraSize);
 	}
 }
